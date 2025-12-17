@@ -1,14 +1,206 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>PlanGo 規約ページ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanGo 規約ページ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #7CB342 0%, #558B2F 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 30px;
+            background-color: #7CB342;
+            color: white;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .link-card {
+            display: block;
+            padding: 25px 30px;
+            background-color: #F1F8E9;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(124, 179, 66, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card:hover {
+            background-color: #fff;
+            border-color: #7CB342;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(124, 179, 66, 0.2);
+        }
+
+        .link-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #7CB342;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .link-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .arrow {
+            font-size: 20px;
+            color: #7CB342;
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 13px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .link-card {
+                padding: 20px 20px;
+            }
+
+            .link-title {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>PlanGo 規約ページ</h1>
-  <ul>
-    <li><a href="./terms.html">利用規約</a></li>
-    <li><a href="./privacy.html">プライバシーポリシー</a></li>
-  </ul>
+    <div class="container">
+        <header>
+            <h1>PlanGo</h1>
+            <p class="subtitle">規約・ポリシー</p>
+        </header>
+
+        <div class="content">
+            <p class="intro-text">
+                PlanGoをご利用いただきありがとうございます。<br>
+                以下の規約をご確認ください。
+            </p>
+
+            <div class="links-container">
+                <a href="./terms.html" class="link-card">
+                    <div class="link-title">
+                        利用規約
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="link-description">
+                        PlanGoサービスの利用条件、禁止事項、権利義務関係について定めています。
+                    </div>
+                </a>
+
+                <a href="./privacy.html" class="link-card">
+                    <div class="link-title">
+                        プライバシーポリシー
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="link-description">
+                        個人情報の取り扱い、収集する情報、第三者提供について説明しています。
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 PlanGo開発チーム ohirunefamily</p>
+        </footer>
+    </div>
 </body>
 </html>
