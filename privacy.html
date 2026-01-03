@@ -46,12 +46,62 @@
             opacity: 0.9;
         }
 
+        .back-to-index {
+            display: inline-block;
+            margin-top: 16px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .back-to-index:hover {
+            opacity: 1;
+        }
+
         .intro {
             margin-bottom: 30px;
             padding: 20px;
             background-color: #F1F8E9;
             border-left: 4px solid #7CB342;
             border-radius: 4px;
+        }
+
+        /* 目次 */
+        .toc {
+            background-color: #F1F8E9;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 5px solid #7CB342;
+        }
+
+        .toc h3 {
+            color: #558B2F;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #558B2F;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #7CB342;
+            text-decoration: underline;
         }
 
         h2 {
@@ -99,6 +149,37 @@
             font-weight: 600;
         }
 
+        /* トップに戻るボタン */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #7CB342;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(124, 179, 66, 0.3);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: #558B2F;
+            transform: translateY(-5px);
+        }
+
         footer {
             text-align: center;
             margin-top: 50px;
@@ -125,6 +206,13 @@
             h2 {
                 font-size: 18px;
             }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
         }
     </style>
 </head>
@@ -133,13 +221,26 @@
         <header>
             <h1>プライバシーポリシー</h1>
             <p class="subtitle">PlanGo - Privacy Policy</p>
+            <a href="./index.html" class="back-to-index">← トップページに戻る</a>
         </header>
 
         <div class="intro">
             <p>PlanGo開発チームohirunefamily(以下「当チーム」といいます。)は、当チームの提供するサービス(以下「本サービス」といいます。)における、本サービスを利用するユーザー(以下「利用者」といいます。)についての個人情報を含む利用者情報の取り扱いについて、以下のとおりプライバシーポリシー(以下「本ポリシー」といいます。)を定めます。</p>
         </div>
 
-        <h2>第1条(収集する利用者情報及び収集方法)</h2>
+        <nav class="toc">
+            <h3>目次</h3>
+            <ul>
+                <li><a href="#article1">第1条(収集する利用者情報及び収集方法)</a></li>
+                <li><a href="#article2">第2条(第三者提供)</a></li>
+                <li><a href="#article3">第3条(個人情報の開示)</a></li>
+                <li><a href="#article4">第4条(個人情報の訂正及び利用停止等)</a></li>
+                <li><a href="#article5">第5条(お問い合わせ窓口)</a></li>
+                <li><a href="#article6">第6条(プライバシーポリシーの変更手続)</a></li>
+            </ul>
+        </nav>
+
+        <h2 id="article1">第1条(収集する利用者情報及び収集方法)</h2>
         <p>本ポリシーにおいて、「利用者情報」とは、利用者の識別に係る情報、ならびに本サービスの利用に関連して生成または蓄積される情報であって、本ポリシーに基づき当チームが収集するものを意味するものとします。</p>
         
         <h3>収集する情報</h3>
@@ -151,7 +252,7 @@
             <li>入力フォームその他当チームが定める方法を通じて利用者が入力または送信する情報</li>
         </ul>
 
-        <h2>第2条(第三者提供)</h2>
+        <h2 id="article2">第2条(第三者提供)</h2>
         <p>当チームは利用者情報のうち、個人情報については、あらかじめ利用者の同意を得ないで、第三者（日本国外にある者を含みます。）に提供しません。但し次に掲げる、必要があり第三者（日本国外にある者を含みます。）に提供する場合はこの限りではありません。</p>
         <ul>
             <li>当チームが利用目的の達成に必要な範囲内において個人情報の取扱いの全部または一部を委託する場合</li>
@@ -163,10 +264,10 @@
         <h3>Firebaseの利用について</h3>
         <p>また当チームは、本サービスの利用状況の分析およびサービス改善のため、Google LLCが提供するFirebase（Firestore Database等）を利用しています。Firebaseにより収集された情報は、Google LLCのプライバシーポリシーに基づいて管理されます。</p>
 
-        <h2>第3条(個人情報の開示)</h2>
+        <h2 id="article3">第3条(個人情報の開示)</h2>
         <p>当チームは利用者から、個人情報保護法の定めに基づき個人情報の開示を求められたときは、利用者ご本人からのご請求であることを確認の上で、利用者に対し遅滞なく開示を行います（当該個人情報が存在しないときにはその旨を通知いたします。）。但し、個人情報保護法その他の法令により、当チームが開示の義務を負わない場合は、この限りではありません。なお、個人情報の開示につきましては、手数料（1件あたり1,000円）を頂戴しておりますので、あらかじめ御了承ください。</p>
 
-        <h2>第4条(個人情報の訂正及び利用停止等)</h2>
+        <h2 id="article4">第4条(個人情報の訂正及び利用停止等)</h2>
         <h3>4-1 訂正及び利用停止</h3>
         <p>当チームは利用者から、個人情報が真実でないという理由によって個人情報保護法の定めに基づきその内容の訂正を求められた場合、及びあらかじめ公表された利用目的の範囲を超えて取扱われているという理由または偽りその他不正の手段により収集されたものであるという理由により、個人情報保護法の定めに基づきその利用の停止を求められた場合には、利用者ご本人からのご請求であることを確認の上で遅滞なく必要な調査を行い、その結果に基づき、個人情報の内容の訂正または利用停止を行い、その旨を利用者に通知します。なお、訂正または利用停止を行わない旨の決定をしたときは、利用者に対しその旨を通知いたします。</p>
 
@@ -176,14 +277,14 @@
         <h3>4-3 適用の除外</h3>
         <p>個人情報保護法その他の法令により、当チームが訂正等または利用停止等の義務を負わない場合は、4-1および4-2の規定は適用されません。</p>
 
-        <h2>第5条(お問い合わせ窓口)</h2>
+        <h2 id="article5">第5条(お問い合わせ窓口)</h2>
         <div class="contact-box">
             <p>ご意見、ご質問、苦情のお申出その他利用者情報の取扱いに関するお問い合わせは、下記のメールアドレスまたはアプリ内のお問い合わせフォーム(プロフィール画面から右上の歯車ボタンを押していただき、画面下部にスクロールして「お問い合わせ」と表示されている箇所をタップすることでお問い合わせフォームが展開されます。)よりお願いいたします。</p>
             <p><strong>PlanGo開発チーム</strong><br>
             メールアドレス：<span class="email">plango202506@gmail.com</span></p>
         </div>
 
-        <h2>第6条(プライバシーポリシーの変更手続)</h2>
+        <h2 id="article6">第6条(プライバシーポリシーの変更手続)</h2>
         <p>当チームは必要に応じて、本ポリシーを変更します。但し、法令上利用者の同意が必要となるような本ポリシーの変更を行う場合、変更後の本ポリシーは、当チーム所定の方法で変更に同意した利用者に対してのみ適用されるものとします。なお、当チームは、本ポリシーを変更する場合には、変更後の本ポリシーの施行時期及び内容を当チームのアプリ上での表示その他の適切な方法により周知し、または利用者に通知します。</p>
 
         <footer>
@@ -191,5 +292,38 @@
             <p>PlanGo開発チーム ohirunefamily</p>
         </footer>
     </div>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // トップに戻るボタンの表示制御
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        // スムーススクロール
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 目次のリンクもスムーススクロール
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
